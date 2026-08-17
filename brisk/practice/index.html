@@ -13,7 +13,7 @@
     }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:82px; }
-    body { margin:0; color:var(--ink); background:var(--canvas); font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif; line-height:1.65; word-break:keep-all; }
+    body { margin:0; overflow-x:hidden; color:var(--ink); background:var(--canvas); font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif; line-height:1.65; word-break:keep-all; }
     button,a { -webkit-tap-highlight-color:transparent; }
     :focus-visible { outline:3px solid #ffbf47; outline-offset:3px; }
     .skip { position:fixed; z-index:100; top:10px; left:10px; padding:10px 14px; color:#fff; background:var(--deep); border-radius:10px; transform:translateY(-150%); }
@@ -64,7 +64,8 @@
     .goal { margin:0 0 18px; padding:13px 15px; border-left:4px solid var(--teal); border-radius:0 10px 10px 0; color:#315a53; background:#effaf7; }
     .source-file { display:flex; gap:13px; margin:18px 0; padding:15px; align-items:center; border:1px solid #bed5e7; border-radius:13px; background:#edf6fd; }
     .file-icon { display:grid; flex:0 0 auto; width:42px; height:42px; place-items:center; color:#fff; background:var(--blue); border-radius:11px; font-size:13px; font-weight:900; }
-    .source-file strong { display:block; color:var(--deep); }
+    .source-file > div { min-width:0; }
+    .source-file strong { display:block; color:var(--deep); overflow-wrap:anywhere; }
     .source-file span { color:var(--muted); font-size:14px; }
     .result-box { margin:18px 0; padding:17px; border:1px solid #b9dfd5; border-radius:14px; background:#eefaf6; }
     .result-box strong { color:#0a6255; }
@@ -122,6 +123,8 @@
       .session-head { grid-template-columns:1fr; }
       .session-num { width:54px; height:54px; }
       .step-main { padding:20px; }
+      .hero-meta li { white-space:normal; }
+      .source-file { align-items:flex-start; }
       .step-top { display:block; }
       .time { display:block; margin-top:7px; }
       .prompt-head { align-items:flex-start; flex-direction:column; }
