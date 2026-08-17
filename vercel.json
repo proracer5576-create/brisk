@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/", "destination": "/brisk", "permanent": false },
     { "source": "/prepare", "destination": "/brisk/prepare", "permanent": false },
     { "source": "/prepare/", "destination": "/brisk/prepare", "permanent": false },
     { "source": "/practice", "destination": "/brisk/practice", "permanent": false },
