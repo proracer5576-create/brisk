@@ -1,4 +1,10 @@
 {
+  "redirects": [
+    { "source": "/prepare", "destination": "/brisk/prepare", "permanent": false },
+    { "source": "/prepare/", "destination": "/brisk/prepare", "permanent": false },
+    { "source": "/practice", "destination": "/brisk/practice", "permanent": false },
+    { "source": "/practice/", "destination": "/brisk/practice", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/brisk", "destination": "/brisk/index.html" },
     { "source": "/brisk/", "destination": "/brisk/index.html" },
