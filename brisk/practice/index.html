@@ -73,6 +73,10 @@
     .prompt { position:relative; margin:18px 0; border:1px solid #ccd9e4; border-radius:15px; background:#f8fafc; }
     .prompt-head { display:flex; min-height:48px; padding:9px 10px 9px 15px; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid #dbe4eb; }
     .prompt-head strong { color:#3f566b; font-size:14px; }
+    .prompt.improved { border-color:#87cbbb; background:#f4fcf9; box-shadow:0 0 0 3px rgba(20,127,130,.06); }
+    .prompt.improved .prompt-head { border-bottom-color:#cbe9e1; background:#e8f8f3; border-radius:14px 14px 0 0; }
+    .prompt.improved .prompt-head strong { color:#0a6255; }
+    .recommended { display:inline-flex; min-height:24px; margin-left:7px; padding:2px 8px; align-items:center; color:#fff; background:var(--teal); border-radius:999px; font-size:11px; font-weight:850; vertical-align:middle; }
     .copy { min-height:40px; padding:7px 12px; border:0; border-radius:9px; color:#fff; background:var(--navy); font:inherit; font-size:13px; font-weight:800; cursor:pointer; }
     .copy:hover { background:var(--deep); }
     pre { max-height:340px; margin:0; padding:17px; overflow:auto; white-space:pre-wrap; color:#263a4e; font:inherit; font-size:15px; line-height:1.7; word-break:keep-all; }
@@ -173,14 +177,34 @@
           <div class="step-main">
             <div class="step-top"><span class="step-label">실습 1</span><span class="time">약 10분</span></div>
             <h3>수업 계획과 자료 초안 만들기</h3>
-            <p class="step-copy">강사가 제공한 단원 지도 계획을 Brisk에 첨부하고, 교안의 프롬프트를 그대로 실행해 수업 계획 초안을 만듭니다.</p>
+            <p class="step-copy">강사가 제공한 단원 지도 계획을 Brisk에 첨부합니다. 먼저 교안 원문 프롬프트의 결과를 살펴본 뒤, 범위와 사실성 조건을 보완한 개선 프롬프트로 다시 생성해 비교합니다.</p>
             <div class="source-file">
               <span class="file-icon" aria-hidden="true">PDF</span>
               <div><strong>미래엔_국어6-1_단원지도계획.pdf</strong><span>강사가 제공하는 실습 파일 · Brisk의 ‘첨부’에서 선택</span></div>
             </div>
             <div class="prompt">
-              <div class="prompt-head"><strong>수업 계획 생성 프롬프트</strong><button class="copy" type="button" data-copy="prompt-plan">프롬프트 복사</button></div>
+              <div class="prompt-head"><strong>교안 원문 프롬프트</strong><button class="copy" type="button" data-copy="prompt-plan">원문 프롬프트 복사</button></div>
               <pre id="prompt-plan">초등학교 6학년 국어 5단원 「자신의 글쓰기 과정을 살펴봐요」에서 [6국03-02]와 [6국03-05]를 바탕으로 주장하는 글쓰기 수업 계획을 만들어 줘. 학생이 주장과 근거를 정리하고 글쓰기 과정을 점검하도록 구성해 줘.</pre>
+            </div>
+            <div class="prompt improved">
+              <div class="prompt-head"><strong>개선 프롬프트 · 8차시 중심 <span class="recommended">권장</span></strong><button class="copy" type="button" data-copy="prompt-plan-improved">개선 프롬프트 복사</button></div>
+              <pre id="prompt-plan-improved">첨부한 「미래엔 국어 6-1 단원 지도 계획」을 근거로 초등학교 6학년 국어 5단원 「자신의 글쓰기 과정을 살펴봐요」의 8차시 수업 계획을 만들어 줘.
+
+성취기준 [6국03-02]와 [6국03-05]를 반영하고, 초등학교 한 차시인 40분 수업으로 구성해 줘.
+
+이번 차시의 범위는 학생이 주장하는 글의 주제를 정하고, 자신의 주장과 근거를 정리한 뒤 글쓰기 계획을 세우는 것까지로 제한해 줘. 글 완성은 9차시, 글쓰기 과정 점검과 수정은 10~11차시에서 진행할 예정이므로 이번 수업 활동에 포함하지 마.
+
+수업 계획에는 다음 내용을 포함해 줘.
+1. 차시와 관련된 단원 지도 계획의 근거
+2. 학습 목표
+3. 준비물
+4. 도입·전개·정리 단계별 시간
+5. 교사 활동과 학생 활동
+6. 주장과 근거를 정리하는 학생 활동
+7. 과정 중심 평가 방법
+8. 다음 차시와의 연결
+
+첨부 자료에서 확인할 수 없는 통계, 연구 결과, 기관명, 설문 결과, 학생 수 등의 정보는 임의로 만들지 마. 추가 자료가 필요한 부분은 사실을 생성하지 말고 ‘교사가 실제 자료를 제공해야 함’이라고 표시해 줘.</pre>
             </div>
             <div class="mini-grid"><div class="mini"><strong>1. 첨부</strong><span>미래엔 단원 지도 계획 PDF</span></div><div class="mini"><strong>2. 설정</strong><span>한국어 · 6학년 · Google</span></div><div class="mini"><strong>3. 산출물</strong><span>수업 계획 초안</span></div></div>
             <div class="result-box">
@@ -191,7 +215,7 @@
                 <a class="ghost-link" href="https://docs.google.com/document/d/1hRUi0_URNQ_moLpXFe3dCa-_H-01NcwmZg6NIbLRy0E/copy" target="_blank" rel="noopener noreferrer">내 Google Drive에 사본 만들기 ↗</a>
               </div>
             </div>
-            <div class="check-row"><label><input type="checkbox" data-check="plan"><span>단원 지도 계획 PDF를 첨부하고 수업 계획 초안을 생성했다</span></label><a class="ghost-link" href="https://app.briskteaching.com/" target="_blank" rel="noopener noreferrer">Brisk에서 실행 ↗</a></div>
+            <div class="check-row"><label><input type="checkbox" data-check="plan"><span>원문과 개선 프롬프트의 결과를 비교하고 8차시 수업 계획 초안을 만들었다</span></label><a class="ghost-link" href="https://app.briskteaching.com/" target="_blank" rel="noopener noreferrer">Brisk에서 실행 ↗</a></div>
           </div>
         </article>
 
@@ -281,8 +305,8 @@
             <div class="step-top"><span class="step-label">교사 검토</span><span class="time">약 10분</span></div>
             <h3>AI 생성 자료 그대로 쓰지 않기</h3>
             <p class="step-copy">생성 결과에서 삭제할 것, 고칠 것, 다시 물을 것을 표시합니다.</p>
-            <div class="mini-grid"><div class="mini"><strong>성취기준</strong><span>활동과 직접 연결되는가</span></div><div class="mini"><strong>학생 수준</strong><span>6학년이 읽고 쓸 수 있는가</span></div><div class="mini"><strong>정확성</strong><span>주장·근거·출처 설명이 맞는가</span></div><div class="mini"><strong>편향성</strong><span>특정 관점만 단정하지 않는가</span></div><div class="mini"><strong>실행성</strong><span>50분 안에 운영 가능한가</span></div></div>
-            <div class="goal"><strong>실제 생성 결과에서 찾아볼 점</strong><br>생성된 초안은 40분 수업으로 구성되어 있으므로 실제 운영 시간에 맞게 조정해야 합니다. 또한 첨부자료에 없는 ‘학업 성취도 15% 향상’ 같은 통계와 기관 사례는 출처를 확인하고, 확인할 수 없다면 삭제하거나 검증된 자료로 바꿉니다.</div>
+            <div class="mini-grid"><div class="mini"><strong>성취기준</strong><span>활동과 직접 연결되는가</span></div><div class="mini"><strong>학생 수준</strong><span>6학년이 읽고 쓸 수 있는가</span></div><div class="mini"><strong>정확성</strong><span>주장·근거·출처 설명이 맞는가</span></div><div class="mini"><strong>편향성</strong><span>특정 관점만 단정하지 않는가</span></div><div class="mini"><strong>실행성</strong><span>40분 안에 운영 가능한가</span></div></div>
+            <div class="goal"><strong>실제 생성 결과에서 찾아볼 점</strong><br>초등학교 한 차시는 40분이므로 시간 설정은 적절합니다. 다만 읽기, 근거 선택, 인용, 계획, 점검을 한 차시에 모두 넣지 않았는지 범위를 확인합니다. 첨부자료에 없는 ‘학업 성취도 15% 향상’ 같은 통계와 기관 사례는 출처를 확인하고, 확인할 수 없다면 삭제하거나 검증된 자료로 바꿉니다.</div>
             <div class="check-row"><label><input type="checkbox" data-check="review"><span>성취기준·수준·정확성·편향성·실행성으로 자료를 수정했다</span></label></div>
           </div>
         </article>

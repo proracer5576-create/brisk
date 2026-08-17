@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/brisk", "destination": "/brisk/index.html" },
+    { "source": "/brisk/", "destination": "/brisk/index.html" },
+    { "source": "/brisk/prepare", "destination": "/brisk/prepare/index.html" },
+    { "source": "/brisk/prepare/", "destination": "/brisk/prepare/index.html" },
+    { "source": "/brisk/practice", "destination": "/brisk/practice/index.html" },
+    { "source": "/brisk/practice/", "destination": "/brisk/practice/index.html" }
+  ]
+}
